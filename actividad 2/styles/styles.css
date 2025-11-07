@@ -1,0 +1,295 @@
+body{
+    display: grid;
+    grid-template-columns: 4.375rem 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "encabezado encabezado"
+        "barraLateral contenido"
+    "footer footer"
+        ;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0px;
+    background-color: #ffffff;
+    
+
+}
+#boton {
+        display: none; 
+    }
+
+h1{
+    font-family: 'Passion One', sans-serif;
+    font-weight: 700;
+    margin-left: 10rem;
+    text-align:left;
+    
+}
+
+
+#encabezado{
+    grid-area: encabezado;
+    color: rgb(255, 255, 255);
+    background-color: #1D1D1D;
+    margin: 0px;
+}
+
+#encabezado h1{
+    text-align: left;
+     margin: auto;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;    
+    list-style-type: none;
+    font-size: 0.5rem;
+}
+
+.menuHeader{
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+}
+
+
+
+#barraLateral {
+    grid-area: barraLateral;
+    background-color: #1D1D1D; 
+    color: #FFFFFF; 
+    grid-area: barraLateral;
+    padding: 20px 10px;
+    text-align: left;
+    width: 7.5rem;
+    z-index: 1000;
+}
+
+#barraLateral h2 {
+    text-align: center;
+    border-bottom: 2px solid #FFC300;
+
+}
+
+#barraLateral ul {
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#barraLateral li {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+
+#botonMenu{
+    width: 7rem;
+    height: 4rem;
+}
+
+.botonOpcion{
+    
+    background-color: #1D1D1D; 
+    border: none;
+    border-radius: 5px;
+    width: 6.5rem;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;   
+    color: white; 
+    transition:  background-color 0.2s ease-out,  transform 0.1s ease-out;
+    
+}
+
+.botonOpcion:hover {
+    background-color: #fdfdfd; 
+    color: #1D1D1D;    
+    transform: translateY(-1px); 
+    
+}
+
+#contenido{
+    grid-area: contenido;    
+}
+
+.categoria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 4.375rem;
+    margin-bottom: 0.5rem;
+}
+
+
+@media screen and (max-width:1000px) {
+
+    .categoria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-bottom: 0.5rem;
+}
+
+    .producto{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.5rem;    
+    border: 1px solid #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 10rem;    
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; 
+    
+    /* 2. Opcional pero recomendado: Mejora la calidad visual de la transformación en algunos navegadores. */
+    will-change: transform; 
+    
+    /* 3. Asegura que el punto de origen del zoom sea el centro de la tarjeta (comportamiento por defecto, pero bueno especificar). */
+    transform-origin: center center;
+
+}
+
+    
+}
+
+
+@media screen and (max-width: 768px){
+
+
+    .categoria{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-right: 6rem;
+    margin-left: auto;
+    margin-bottom: 0.5rem;
+    
+    }
+    .producto{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0.5rem;    
+        border: 1px solid #f7f7f7;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        width: auto;    
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out; 
+        will-change: transform; 
+        transform-origin: center center;
+
+    }
+
+    .tituloCategoria{
+        margin-left: 1rem;
+    }
+
+ 
+
+
+
+
+        #barraLateral{
+    background-color: #ffffff;
+     transform: translateX(-110%);
+    
+
+        }
+
+
+        #sidebar {
+            transform: translateX(-110%);
+            background-color: #1D1D1D;
+            position:fixed;
+        }
+        #contenido{
+            grid-area: barraLateral contenido;
+            
+        }
+
+
+        #boton {
+            display: block; 
+        }
+
+
+        #sidebar.is-open {
+            transform: translateX(0); /* Vuelve a su posición normal */
+        }
+
+
+}
+
+
+.producto{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.5rem;    
+    border: 1px solid #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: auto;    
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; 
+    will-change: transform; 
+    transform-origin: center center;
+
+}
+
+.producto:hover {
+    /* 4. Aplica el zoom cuando el cursor está sobre la tarjeta. */
+    /* scale(1.05) agranda la tarjeta un 5%. Puedes ajustar este valor. */
+    transform: scale(1.05); 
+    
+    /* 5. Opcional: Para darle más énfasis, puedes elevar la tarjeta con una sombra más fuerte. */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.imagenProducto img{
+    margin-top: 0.5rem;
+    max-width: 80%;
+    height: auto;
+    padding: 0.5rem;   
+}
+
+.nombreProducto{
+    margin-top:0.5rem;
+    margin-bottom: 0rem;
+}
+
+.ingredientes{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+.ingredientesProducto{
+    font-size: 0.9rem; 
+    font-weight: 400; 
+    color: #666; 
+    padding: 0 1rem 1rem 1rem; 
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+.parrafoFooter{
+    font-size: 6px;   
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: #1D1D1D;
+    color:#fdfdfd
+}
